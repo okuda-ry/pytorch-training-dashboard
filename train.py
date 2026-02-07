@@ -36,6 +36,12 @@ def js():
     )
 
 
+@app.route("/model.png")
+def model_image():
+    with open("model.png", "rb") as f:
+        return f.read(), 200, {"Content-Type": "image/png"}
+
+
 class SimpleNN(nn.Module):
     def __init__(self):
         super(SimpleNN, self).__init__()
