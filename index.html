@@ -34,6 +34,26 @@
   <canvas id="accChart"></canvas>
 </section>
 
+<!-- Prediction Section -->
+<div class="card">
+  <h2>✍️ Digit Recognition</h2>
+  <p>Draw a digit below and see if the model can recognize it!</p>
+  
+  <div class="canvas-container">
+    <canvas id="drawingCanvas" width="280" height="280"></canvas>
+  </div>
+  
+  <div class="button-group">
+    <button id="predictBtn" class="btn btn-predict">Predict</button>
+    <button id="clearBtn" class="btn btn-clear">Clear Canvas</button>
+  </div>
+  
+  <div id="predictionResult" class="prediction-result hidden">
+    <p>Predicted Digit: <span id="predictedDigit">-</span></p>
+    <p>Confidence: <span id="confidence">-</span></p>
+  </div>
+</div>
+
 <section class="card">
   <h2>Model Architecture</h2>
   <img src="model.png" class="arch">
@@ -58,6 +78,7 @@
       <li>🎯 MNISTデータセット - 28×28ピクセルの手書き数字画像</li>
       <li>💨 高速訓練 - 全データセットの5%を使用して高速化</li>
       <li>📊 詳細な統計 - 訓練ロスと検証精度を追跡</li>
+      <li>✍️ インタラクティブな推論テスト - 訓練したモデルで手書き数字を認識</li>
     </ul>
   </div>
 
@@ -67,7 +88,10 @@
       <li>ページ上部の「Epochs」欄でエポック数を設定（1～50）</li>
       <li>「Train Model」ボタンをクリック</li>
       <li>モデルが自動で訓練され、リアルタイムでグラフが更新</li>
-      <li>訓練完了後、結果を確認可能</li>
+      <li>訓練完了後、上部のグラフで結果を確認</li>
+      <li>「✍️ Digit Recognition」セクションで訓練したモデルをテスト</li>
+      <li>キャンバスに手書き数字を描画して「Predict」をクリック</li>
+      <li>モデルが認識結果と信頼度を表示します</li>
     </ol>
   </div>
 

@@ -138,3 +138,68 @@ async function startTraining(){
   epochInput.disabled = false;
  }
 }
+
+// Drawing Canvas Setup
+const canvas = document.getElementById('drawingCanvas');
+const ctx = canvas.getContext('2d');
+let isDrawing = false;
+
+// Set canvas background to white
+ctx.fillStyle = 'white';
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+canvas.addEventListener('mousedown', (e) => {
+  isDrawing = true;
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+});
+
+canvas.addEventListener('mousemove', (e) => {
+  if (!isDrawing) return;
+  const rect = canvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  ctx.lineWidth = 25;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.strokeStyle = 'black';
+  ctx.lineTo(x, y);
+  ctx.stroke();
+});
+
+canvas.addEventListener('mouseup', () => {
+  isDrawing = false;
+});
+
+canvas.addEventListener('mouseout', () => {
+  isDrawing = false;
+});
+
+// Clear Canvas Button
+document.getElementById('clearBtn').addEventListener('click', () => {
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  document.getElementById('predictionResult').classList.add('hidden');
+});
+
+// Predict Button
+document.getElementById('predictBtn').addEventListener('click', () => {
+  const imageData = canvas.toDataURL('image/png');
+  fetch('/predict', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ image: imageData }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById('predictedDigit').textContent = data.digit;
+      document.getElementById('confidence').textContent = (data.confidence * 100).toFixed(2) + '%';
+      document.getElementById('predictionResult').classList.remove('hidden');
+    })
+    .catch((error) => console.error('Error:', error));
+});

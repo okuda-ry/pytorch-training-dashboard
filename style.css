@@ -149,3 +149,74 @@ p{
 .readme strong{
     color: #00ffc3;
 }
+
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#drawingCanvas {
+  border: 2px solid #333;
+  cursor: crosshair;
+  background-color: white;
+  display: block;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-predict {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-predict:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+}
+
+.btn-clear {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.btn-clear:hover {
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  transform: translateY(-2px);
+}
+
+.prediction-result {
+  margin-top: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-radius: 8px;
+  text-align: center;
+  border-left: 4px solid #667eea;
+}
+
+.prediction-result.hidden {
+  display: none;
+}
+
+.prediction-result p {
+  margin: 8px 0;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+#predictedDigit {
+  color: #667eea;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#confidence {
+  color: #764ba2;
+  font-weight: bold;
+}
