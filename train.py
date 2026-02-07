@@ -11,18 +11,26 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return open("index.html").read(), 200, {"Content-Type": "text/html; charset=utf-8"}
+    return (
+        open("index.html", encoding="utf-8").read(),
+        200,
+        {"Content-Type": "text/html; charset=utf-8"},
+    )
 
 
 @app.route("/style.css")
 def css():
-    return open("style.css").read(), 200, {"Content-Type": "text/css; charset=utf-8"}
+    return (
+        open("style.css", encoding="utf-8").read(),
+        200,
+        {"Content-Type": "text/css; charset=utf-8"},
+    )
 
 
 @app.route("/app.js")
 def js():
     return (
-        open("app.js").read(),
+        open("app.js", encoding="utf-8").read(),
         200,
         {"Content-Type": "application/javascript; charset=utf-8"},
     )

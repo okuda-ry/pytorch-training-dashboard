@@ -46,6 +46,50 @@
   <p>CUDA: Enabled</p>
 </section>
 
+<section class="card readme">
+  <h2>📚 About This Project</h2>
+  <p>このプロジェクトはMNISTデータセットを用いた深層学習デモアプリケーションです。ウェブブラウザからリアルタイムでモデルの訓練が可能です。</p>
+  
+  <div class="readme-section">
+    <h3>✨ Features</h3>
+    <ul>
+      <li>🚀 リアルタイムグラフ表示 - 訓練ロスと検証精度を動的に可視化</li>
+      <li>⚙️ エポック数調整 - ウェブUIからエポック数を自由に変更</li>
+      <li>🎯 MNISTデータセット - 28×28ピクセルの手書き数字画像</li>
+      <li>💨 高速訓練 - 全データセットの5%を使用して高速化</li>
+      <li>📊 詳細な統計 - 訓練ロスと検証精度を追跡</li>
+    </ul>
+  </div>
+
+  <div class="readme-section">
+    <h3>🎮 How to Use</h3>
+    <ol>
+      <li>ページ上部の「Epochs」欄でエポック数を設定（1～50）</li>
+      <li>「Train Model」ボタンをクリック</li>
+      <li>モデルが自動で訓練され、リアルタイムでグラフが更新</li>
+      <li>訓練完了後、結果を確認可能</li>
+    </ol>
+  </div>
+
+  <div class="readme-section">
+    <h3>🏗️ Model Architecture</h3>
+    <p><strong>ニューラルネットワーク構成:</strong></p>
+    <ul>
+      <li>入力層: 784次元（28×28画像フラット化）</li>
+      <li>隠れ層1: 128ユニット + ReLU + Dropout(0.2)</li>
+      <li>隠れ層2: 64ユニット + ReLU + Dropout(0.2)</li>
+      <li>出力層: 10ユニット（0～9の数字分類）</li>
+    </ul>
+    <p><strong>訓練設定:</strong> Adam最適化器、クロスエントロピー損失、Learning Rate: 0.001</p>
+  </div>
+
+  <div class="readme-section">
+    <h3>📈 What to Expect</h3>
+    <p>訓練が進むにつれて、左側のロスグラフが減少し、右側の精度グラフが上昇する様子が見られます。</p>
+    <p><em>注意: このデモではデータセット全体の5%のみを使用しているため、完全なモデル性能には到達しません。</em></p>
+  </div>
+</section>
+
 <script src="app.js"></script>
 </body>
 </html>
