@@ -1,0 +1,117 @@
+body{
+    margin:0;
+    font-family: -apple-system,BlinkMacSystemFont;
+    background: linear-gradient(135deg,#67b7ff,#a855f7);
+    color:white;
+    text-align:center;
+}
+
+header{
+    padding:60px 20px;
+}
+
+h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.sub{
+    opacity:0.8;
+    margin-bottom:20px;
+}
+
+.controls{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.control-group{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.control-group label{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.control-group input{
+    width: 80px;
+    padding: 8px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+.control-group input:focus{
+    outline: none;
+    border-color: #00ffc3;
+    box-shadow: 0 0 10px rgba(0, 255, 195, 0.5);
+}
+
+button{
+    padding:15px 40px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(45deg,#00ffa3,#00c3ff);
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 255, 163, 0.4);
+}
+
+button:hover:not(:disabled){
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 163, 0.6);
+}
+
+button:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.card{
+    background:#0b0f1a;
+    margin:40px auto;
+    padding:40px;
+    border-radius:20px;
+    width:80%;
+    max-width:900px;
+    box-shadow:0 0 40px rgba(0,0,0,0.5);
+}
+
+.card h2{
+    margin-top:0;
+    color:#00ffc3;
+    font-size:24px;
+}
+
+.card canvas{
+    max-width: 100%;
+    height: auto;
+}
+
+.arch{
+    width:100%;
+    border-radius:12px;
+}
+
+p{
+    font-size:16px;
+    line-height:1.6;
+    margin:10px 0;
+}
